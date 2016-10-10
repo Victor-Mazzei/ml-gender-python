@@ -30,10 +30,18 @@ prediction2 = clf2.predict(_X)
 prediction3 = clf3.predict(_X)
 
 
+#results 
+r1 = accuracy_score(_Y,prediction1)
+r2 = accuracy_score(_Y,prediction2)
+r3 = accuracy_score(_Y,prediction3)
 
-print("SVM : ",accuracy_score(_Y,prediction1))
-print("DecisionTree : ",accuracy_score(_Y,prediction))
-print("KNeighborsClassifier : ",accuracy_score(_Y,prediction2))
-print("Naive : ",accuracy_score(_Y,prediction3))
+#print best result
+if r1 > r2 and r1 > r3:
+	print("SVM : ",r1)
+elif r2 > r3 and r2 > r1:
+	print("KNeighborsClassifier : ",r2)
+else :
+	print("Naive : ",r3)
+
 
 
